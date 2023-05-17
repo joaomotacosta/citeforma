@@ -44,6 +44,7 @@ Here's a breakdown of the subnets for each company:
 - Company 12: 10.10.10.176/28
 - Company 13: 10.10.10.192/28
 - Company 14: 10.10.10.208/28
+
 For the Administration/Management VLAN, we can use the 10.10.10.224/28 subnet, which will give us 14 IP addresses. The IT closet VLAN can use the 10.10.10.240/28 subnet, which will also give us 14 IP addresses.
 
 Here's the table with the required fields:
