@@ -220,3 +220,18 @@ SL1(config-if-range)# switchport port-security maximum 1
 SL1(config-if-range)# switchport port-security violation restrict
 ```
 (Repeat for `SL2` and `SL3`)
+
+## Group 3
+### Prompt
+Group 3 is router and network services configuration. For this, we're going to use one 2911 router and a DNS server.
+
+- Configure basic security
+- Configure VLAN routing
+- Configure DHCP for the necessary VLANs
+- Configure DNS Server
+- Use a default route as an internet "exit node"
+- Configure NAT (overload), allowing all VLANs
+- Ensure that the VLANs belonging to clients can't communicate with each other
+- Confirm communication between the IT networks on both co-working spaces using a GRE tunnel.
+
+### Resposta
