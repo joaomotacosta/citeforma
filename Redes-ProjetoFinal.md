@@ -123,13 +123,13 @@ SL1(config)# interface vlan 99
 SL1(config-if)# ip address 10.10.10.225 255.255.255.240
 SL1(config-if)# no shutdown
 
-SL1(config)# interface vlan 99
-SL1(config-if)# ip address 10.10.10.226 255.255.255.240
-SL1(config-if)# no shutdown
+SL2(config)# interface vlan 99
+SL2(config-if)# ip address 10.10.10.226 255.255.255.240
+SL2(config-if)# no shutdown
 
-SL1(config)# interface vlan 99
-SL1(config-if)# ip address 10.10.10.227 255.255.255.240
-SL1(config-if)# no shutdown
+SL3(config)# interface vlan 99
+SL3(config-if)# ip address 10.10.10.227 255.255.255.240
+SL3(config-if)# no shutdown
 ```
 
 8. Create VLANs on switch SL1 and use VTP to pass it onto the other switches using the `vlan` and `vtp` commands.
