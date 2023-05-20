@@ -24,7 +24,7 @@
 ### Bandit7 > Bandit8
 	bandit7@bandit:~$ cat data.txt | grep millionth
 ### Bandit8 > Bandit9
-	bandit8@bandit:~$ sort data.txt | uniq -c
+	bandit8@bandit:~$ sort data.txt | uniq -c | grep "1 "
 ### Bandit9 > Bandit10
 	bandit9@bandit:~$ strings data.txt | grep ===
 ### Bandit10 > Bandit11
