@@ -4,12 +4,15 @@
 ### Bandit0 > Bandit1
 	bandit0@bandit:~$ cat readme
 ### Bandit1 > Bandit2
+	bandit1@bandit:~$ cd /home
 	bandit1@bandit:/home$ cat bandit1/-
 ### Bandit2 > Bandit3
+	bandit2@bandit:~$ cd /home
 	bandit2@bandit:/home$ cat 'bandit2/spaces in this filename'
 ### Bandit3 > Bandit4
 	bandit3@bandit:~$ cat inhere/.hidden
 ### Bandit4 > Bandit5
+	bandit4@bandit:~$ cd inhere/
 	bandit4@bandit:~/inhere$ find -type f | xargs file && cat ./-file07
 ### Bandit5 > Bandit6
 	bandit5@bandit:~$ find ./inhere -type f \! -executable -size 1033c
