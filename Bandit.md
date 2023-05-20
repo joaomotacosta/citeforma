@@ -15,6 +15,7 @@
 	bandit5@bandit:~$ find ./inhere -type f \! -executable -size 1033c
 	bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
 ### Bandit6 > Bandit7
+	bandit6@bandit:~$ cd /
 	bandit6@bandit:/$ find -type f -group bandit6 -user bandit7 | grep bandit7.password
 	bandit6@bandit:/$ cat ./var/lib/dpkg/info/bandit7.password
 ### Bandit7 > Bandit8
