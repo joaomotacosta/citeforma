@@ -1,0 +1,417 @@
+
+!SW1
+ena
+conf t
+host SW1
+!
+line con 0
+pass cisco
+login
+exit
+!
+ena sec class
+!
+user admin sec cisco
+!
+ip domain-name CISEG.COM
+!
+crypto key gen rsa
+1024
+!
+line vty 0 4
+login local
+!trans in ssh
+exit
+!
+bann motd &
+************************
+************************
+**DADOS!!!!!!!!!!!!!!!**
+************************
+************************
+&
+!
+serv pass
+!
+!
+vtp mode server
+vtp domain CISEG.COM
+vtp pass cisco
+vtp ver 2
+!
+!
+vlan 10
+name IT
+!
+vlan 20
+name HR
+!
+vlan 30
+name SALES
+!
+vlan 99
+name M&N
+exit
+!
+!
+int vlan 99
+ip add 172.16.99.11 255.255.255.0
+no shut
+exit
+!
+!
+ip def 172.16.99.1
+!
+!
+int range fa0/5-6
+switch mode acc
+switch acc vlan 10
+!
+int range fa0/11-12
+switch mode acc
+switch acc vlan 20
+!
+int range fa0/18-19
+switch mode acc
+switch acc vlan 30
+exit
+!
+!
+int range g0/1,fa0/1-2
+switch mode trunk
+switch trunk native vlan 99
+switch trunk all vlan 1,10,20,30,99
+exit
+!
+do copy run st
+
+-----------------------------------
+-----------------------------------
+!SW2
+ena
+conf t
+host SW2
+!
+line con 0
+pass cisco
+login
+exit
+!
+ena sec class
+!
+user admin sec cisco
+!
+ip domain-name CISEG.COM
+!
+crypto key gen rsa
+1024
+!
+line vty 0 4
+login local
+!trans in ssh
+exit
+!
+bann motd &
+************************
+************************
+**DADOS!!!!!!!!!!!!!!!**
+************************
+************************
+&
+!
+serv pass
+!
+!
+vtp mode cl
+vtp domain CISEG.COM
+vtp pass cisco
+!
+!
+int fa0/1
+switch mode trunk
+switch trunk native vlan 99
+switch trunk all vlan 1,10,20,30,99
+exit
+!
+!
+!
+int vlan 99
+ip add 172.16.99.12 255.255.255.0
+no shut
+exit
+!
+!
+ip def 172.16.99.1
+!
+!
+int range fa0/5-6
+switch mode acc
+switch acc vlan 10
+!
+int range fa0/11-12
+switch mode acc
+switch acc vlan 20
+!
+int range fa0/18-19
+switch mode acc
+switch acc vlan 30
+exit
+!
+!
+!
+do copy run st
+
+-----------------------------------
+-----------------------------------
+!SW3
+ena
+conf t
+host SW3
+!
+line con 0
+pass cisco
+login
+exit
+!
+ena sec class
+!
+user admin sec cisco
+!
+ip domain-name CISEG.COM
+!
+crypto key gen rsa
+1024
+!
+line vty 0 4
+login local
+!trans in ssh
+exit
+!
+bann motd &
+************************
+************************
+**DADOS!!!!!!!!!!!!!!!**
+************************
+************************
+&
+!
+serv pass
+!
+!
+vtp mode cl
+vtp domain CISEG.COM
+vtp pass cisco
+!
+!
+int fa0/1
+switch mode trunk
+switch trunk native vlan 99
+switch trunk all vlan 1,10,20,30,99
+exit
+!
+!
+!
+int vlan 99
+ip add 172.16.99.13 255.255.255.0
+no shut
+exit
+!
+!
+ip def 172.16.99.1
+!
+!
+int range fa0/5-6
+switch mode acc
+switch acc vlan 10
+!
+int range fa0/11-12
+switch mode acc
+switch acc vlan 20
+!
+int range fa0/18-19
+switch mode acc
+switch acc vlan 30
+exit
+!
+!
+!
+do copy run st
+
+-----------------------------------
+-----------------------------------
+!ROAS
+ena
+conf t
+host ROAS
+!
+line con 0
+pass cisco
+login
+exit
+!
+ena sec class
+!
+user admin sec cisco
+!
+ip domain-name CISEG.COM
+!
+crypto key gen rsa
+1024
+!
+line vty 0 4
+login local
+!trans in ssh
+exit
+!
+bann motd &
+************************
+************************
+**DADOS!!!!!!!!!!!!!!!**
+************************
+************************
+&
+!
+serv pass
+!
+!
+int g0/0
+no ip add
+no shut
+exit
+!
+!
+int g0/0.10
+enc dot 10
+ip add 172.16.10.1 255.255.255.0
+ip nat in
+!
+int g0/0.20
+enc dot 20
+ip add 172.16.20.1 255.255.255.0
+ip nat in
+!
+int g0/0.30
+enc dot 30
+ip add 172.16.30.1 255.255.255.0
+ip nat in
+!
+int g0/0.99
+enc dot 99 native
+ip add 172.16.99.1 255.255.255.0
+ip nat in
+exit
+!
+!
+int g0/0/0
+ip add 47.103.211.2 255.255.255.252
+ip nat out
+desc LINK-TO-ISP
+no shut
+exit
+!
+!
+ip route 0.0.0.0 0.0.0.0 47.103.211.1
+!
+!
+acc 1 per 172.16.10.0 0.0.0.255
+acc 1 per 172.16.20.0 0.0.0.255
+acc 1 per 172.16.30.0 0.0.0.255
+acc 1 per 172.16.99.0 0.0.0.255
+!
+!
+ip nat in source list 1 int g0/0/0 overload
+!
+!
+ip dhcp pool IT
+net 172.16.10.0 255.255.255.0
+def 172.16.10.1
+dns 194.165.209.1
+exit
+!
+ip dhcp pool HR
+net 172.16.20.0 255.255.255.0
+def 172.16.20.1
+dns 194.165.209.1
+exit
+!
+ip dhcp pool SALES
+net 172.16.30.0 255.255.255.0
+def 172.16.30.1
+dns 194.165.209.1
+exit
+!
+!
+ip dhcp exc 172.16.10.1 172.16.10.5
+ip dhcp exc 172.16.20.1 172.16.20.5
+ip dhcp exc 172.16.30.1 172.16.30.5
+!
+!
+do copy run st
+
+
+-----------------------------------
+-----------------------------------
+!ISP
+ena
+conf t
+host ISP
+!
+int g0/0/0
+ip add 47.103.211.1 255.255.255.252
+no shut
+exit
+!
+int g0/0
+ip add 194.165.209.254 255.255.255.0
+no shut
+exit
+!
+!
+do copy run st
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

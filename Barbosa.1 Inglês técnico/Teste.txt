@@ -1,0 +1,28 @@
+1a > A type of malware whose purpose is to lock down the victim's files, encrypt them and demand payment (a ransom) to decrypt said files. Usually done with crypto-currencies and by malicious threat actors looking to do the most damange.
+1b > Zero-day is a type of vulnerability that has not been found and/or researched by the developers of the software in question, hence the "0 Day" moniker.
+1c > A vulnerability in the cybersecurity world is a weak point, in which an attacker could gain unwanted access, whether it be a system, a server or an application.
+
+2a > Ransomware groups' tactics
+2b > Ransomware groups' TTPs (Techniques and Procedures)
+2c > Ransomware groups' own vulnerability research
+2d > Ransomware groups' "First to refuse" agreements
+2e > Ways in which ransomware groups develop and monetize their attacks
+
+3a > Ransomware groups change tactics as "organizations strengthen their cybersecurity measures, law enforcement gets better at tracking down threat actors and governments tighten regulations on cryptocurrencies".
+3b > Ransomware groups may start monetizing by "developing their own vulnerability research and exploitation
+teams"
+3c > The tone is stern, yet honest and straight to the point. In my personal opinion, that's the best way to go about these sorts of situations, as knowledge around this area of expertise can be scarce and should be concise and easy to read, as to allow maximum reach among experts and "noobies" alike.
+3d > The role of a technician in this area is to gain knowledge and develop the tools and resources to fight againt these sorts of attacks, such as making sure that security measures are in place, systems are updated and backed up on a regular basis and having a good strategy in case these sorts of threats emerge.
+
+4a > 93%
+4b > 22 days
+4c > $10.000/hour for small businesses to more than $5.000.000/hour for major enterprises.
+4d > Secure Access Service Edge (SASE), Cloud Platforms, Managed endpoint detection and response, Multi-Factor Authentication.
+4e > 10-15%
+
+5 > The skills displayed in the image are more than essential to any expert or anyone working in the cybersecurity field. There are a few skills such as Cloud Security and Ethical Hacking that could be "skippable", but they are incredible skills to help think like an attacker, understand how they could perform certain attacks and mitigate the damage they can cause on a company's systems.
+
+But just as hard skills are important, soft skills can be beneficial to these sorts of positions, especially regarding the psychological spectrum. Being able to blend in, talk to anyone and have an understanding of how an attacker's mind works are great skills to dominate in the field, whether it be physical or digital.
+
+Enrolling in this course has allowed me to sharpen up on some older skills, develop new ones and make connections that can lead to good business partnerships in the professional world. Even skills deemed strange such as lock picking or learning how to use and abuse different operating systems, that I found to be uninteresting when I first started, have been a topic of great interest for me and my colleagues over these past couple months.
+

@@ -1,0 +1,7 @@
+1	SoTijolos Lda	Rua A, 1	Lisboa	213334445	111222333
+2	Cimental Lda	Zona industrial  das Areias, Lote 1	Loures	216667773	444555666
+3	Madeirame	Zona industrial  das Areias, Lote 3	Loures	217778899	777888999
+4	Sanital Lda	Rua das Acacias, 33-39	Alverca	219996677	111000222
+5	Ferral Lda	Zona industrial de Camarate, Lote 33	Camarate	210003332	333444555
+6	Vidraceira Lda	Rua dos Vidreiros, 99	Sacavem	214446699	666777888
+7	Aluminium	Rua Z, 33	Loures	216667775	888999111

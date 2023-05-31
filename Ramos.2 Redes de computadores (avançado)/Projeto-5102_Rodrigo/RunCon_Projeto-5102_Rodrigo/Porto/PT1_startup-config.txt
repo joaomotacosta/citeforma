@@ -1,0 +1,141 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname PT1
+!
+!
+!
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+!
+!
+ip dhcp excluded-address 10.10.1.33
+ip dhcp excluded-address 10.10.1.34
+ip dhcp excluded-address 10.10.1.17
+ip dhcp excluded-address 10.10.1.18
+!
+ip dhcp pool SRV
+ network 10.10.1.16 255.255.255.240
+ default-router 10.10.1.17
+ dns-server 10.10.1.22
+ip dhcp pool ADMDIR
+ network 10.10.1.32 255.255.255.224
+ default-router 10.10.1.33
+ dns-server 10.10.1.22
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+license udi pid CISCO2911/K9 sn FTX15248434-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name ABYTES.COM
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 10.10.1.17 255.255.255.240
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 10.10.1.33 255.255.255.224
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 10.10.1.9 255.255.255.248
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/0
+ ip address 194.165.209.2 255.255.255.252
+ ip nat outside
+!
+interface GigabitEthernet0/2/0
+ ip address 10.10.1.1 255.255.255.252
+ ip nat inside
+!
+interface GigabitEthernet0/3/0
+ ip address 10.10.3.2 255.255.255.252
+ ip nat inside
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 6.6.6.6
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/0
+ passive-interface GigabitEthernet0/1
+ passive-interface GigabitEthernet0/0/0
+ network 10.10.1.0 0.0.0.3 area 0
+ network 10.10.3.0 0.0.0.3 area 0
+ network 10.10.1.16 0.0.0.15 area 0
+ network 10.10.1.32 0.0.0.31 area 0
+ network 194.165.209.0 0.0.0.3 area 0
+ default-information originate
+!
+ip nat inside source list 1 interface GigabitEthernet0/0/0 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/0 
+!
+ip flow-export version 9
+!
+!
+access-list 1 permit 10.10.1.16 0.0.0.15
+access-list 1 permit 10.10.1.0 0.0.0.3
+access-list 1 permit 10.10.2.0 0.0.0.3
+access-list 1 permit 10.10.3.0 0.0.0.3
+access-list 1 permit 10.10.1.32 0.0.0.31
+access-list 1 permit 10.10.2.32 0.0.0.31
+access-list 1 permit 10.10.3.32 0.0.0.31
+access-list 1 permit 10.10.2.24 0.0.0.7
+access-list 1 permit 10.10.2.16 0.0.0.7
+!
+banner motd & ABYTES SECURITY WARNING! &
+!
+!
+!
+!
+line con 0
+ password 7 0822455D0A16
+ login
+!
+line aux 0
+!
+line vty 0 1
+ login local
+ transport input ssh
+line vty 2 4
+ login
+!
+!
+!
+end
+

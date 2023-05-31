@@ -1,0 +1,29 @@
+ena
+conf t
+
+line con 0
+pass cisco
+login
+exit
+
+ena sec class
+
+user admin sec cisco
+
+ip domain-name ABYTES.COM
+
+line vty 0 1
+login local 
+trans in ssh
+exit
+
+banner motd & ABYTES SECURITY WARNING! &
+
+serv pass
+
+crypto key gen rsa
+1024
+
+exit
+
+copy run st

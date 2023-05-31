@@ -1,0 +1,9 @@
+1	Lurdes Nobre	Avenida B, 49 1.esq	Lisboa	211111111	37	111111111
+2	Alice Nunes	Rua X, 33	Sacavem	212222222	56	222222222
+3	Jose Costa	Travessa dos Lilases, 32	Loures	213333333	45	333333333
+4	Luis Silva	Rua da Rosa, 23 2.dir	Alverca	214444444	34	444444444
+5	Maria Rodrigues	Avenida das Acacias, 3	Unhos	215555555	66	555555555
+6	Clara Alves	Rua Z, 55, 1.dir	Sacavem	216666666	41	666666666
+7	Joao Borges	Rua dos Malmequeres, 17 3.dir	Bobadela	217777777	50	777777777
+8	Rui Amaral	Rua A, 56 1.esq	Lisboa	218888888	38	888888888
+9	Antonio Lopes	Beco dos Lilases, sn	Santa Iria	219999999	61	999999999

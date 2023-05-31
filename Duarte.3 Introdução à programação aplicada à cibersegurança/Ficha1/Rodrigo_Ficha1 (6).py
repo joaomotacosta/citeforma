@@ -1,0 +1,11 @@
+num1 = int(input("Introduza o valor do primeiro número: "))
+num2 = int(input("Introduza o valor do segundo número: "))
+
+print()
+print("A soma destes números é " + str(num1+num2))
+print()
+print("A subtração destes números é " + str(num1-num2))
+print()
+print("A multiplicação destes números é " + str(num1*num2))
+print()
+print("A divisão destes números é " + str(num1/num2))
