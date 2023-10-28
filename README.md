@@ -6,7 +6,7 @@ O repositório está organizado da seguinte forma:
 
 - **UFCDs**: Cada UFCD (Unidade de Formação de Curta Duração) tem a sua própria pasta. Dentro de cada pasta estão os trabalhos desenvolvidos durante a respectiva UFCD.
 
-- **Pasta Documentos**: Esta pasta é dedicada a documentos relevantes ao curso que não estão diretamente relacionados a uma UFCD específica. Aqui vão estar algumas informações adicionais, tutoriais e links para outros recursos fora do Github (tais como gravações de aulas).
+- **Pasta `.recursos`**: Esta pasta é dedicada a documentos relevantes ao curso que não estão diretamente relacionados a uma UFCD específica. Aqui vão estar algumas informações adicionais, tutoriais e links para outros recursos fora do Github (tais como gravações de aulas).
 
 ## Contribuição
 Este repositório é pessoal e tem o objetivo de servir como um portfólio dos meus trabalhos durante o curso de especialização tecnológica em Cibersegurança. Portanto, não são aceitas contribuições externas. Este repositório vai sofrer algumas alterações até ao final de 2023. A partir desse ponto, este repositório ficará arquivado.
