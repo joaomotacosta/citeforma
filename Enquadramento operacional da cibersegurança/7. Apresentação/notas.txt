@@ -1,3 +1,0 @@
-(Abrir VM)
-- Mostrar Rainbow Table (com Notepad++ ou VSCode)
-- Mostrar console com as hashes cracked
